@@ -1,0 +1,16 @@
+NAME "SuperHoneyCombProcessor"
+
+EVERY 1 TICK DO
+    -- power output
+    INPUT fe:: FROM power_in top side
+    -- power input
+    OUTPUT fe:: TO power_out
+END
+
+EVERY 20 TICKS DO
+    INPUT *honeycomb* FROM hive
+    OUTPUT TO centrifuge
+forget
+    INPUT EXCEPT *honeycomb* FROM centrifuge
+    OUTPUT TO crate
+END

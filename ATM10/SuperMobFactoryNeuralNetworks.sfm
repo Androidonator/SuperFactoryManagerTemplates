@@ -1,0 +1,47 @@
+-- Diagnostic info --
+-- Program:
+NAME "Super mob factory"
+
+EVERY 1 TICK DO
+    INPUT fe:: FROM energy_in LEFT SIDE
+    OUTPUT fe:: TO energy_out BACK SIDE
+END
+
+EVERY 20 TICKS DO
+    INPUT prediction_matrix FROM interface
+    OUTPUT TO predict TOP SIDE
+forget
+    INPUT "Sheep Prediction" FROM predict BOTTOM SIDE
+    OUTPUT TO sheep TOP SIDE
+forget
+    INPUT "Blaze Prediction" FROM predict BOTTOM SIDE
+    OUTPUT TO blaze BOTTOM SIDE
+forget
+    INPUT "Rabbit Prediction" FROM predict BOTTOM SIDE
+    OUTPUT TO rabbit BOTTOM SIDE
+forget
+    INPUT FROM fabri BOTTOM SIDE
+    OUTPUT TO interface
+END
+
+-- DateTime: 2026-07-01 07:23.05
+-- Game Version: Minecraft 1.21.1 (1.21.1/neoforge)
+-- Forge Version: 21.1.228
+-- SFM Version: 4.32.0
+
+-- Warnings
+-- * Label "drawer" is assigned in the world at [41,81,-642] and is connected by cables but is not detected as a valid inventory.
+-- * Label "drawer" is assigned in the world but not defined in code.
+-- * Did you remember to push your labels using the label gun?
+
+-- Labels
+-- LabelPositionHolder - 22 total labels
+-- * energy_out - 8 positions
+-- * fabri - 4 positions
+-- * blaze - 1 positions
+-- * rabbit - 1 positions
+-- * drawer - 1 positions
+-- * predict - 4 positions
+-- * interface - 1 positions
+-- * energy_in - 1 positions
+-- * sheep - 1 positions
